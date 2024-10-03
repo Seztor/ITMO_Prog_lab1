@@ -20,10 +20,10 @@ class CalculatorTestCase(unittest.TestCase):
         self.assertEqual(float(to_calc('4/(2/4)')), float(8))
 
     def test_calc_six(self):
-        self.assertEqual(float(to_calc('1/3^2')), float(1/3**2))
+        self.assertEqual(float(to_calc('1/3^2')), float(1/9))
 
     def test_calc_seven(self):
-        self.assertEqual(float(to_calc('(1+2)*(3/2)')), float((1+2)*(3/2)))
+        self.assertEqual(float(to_calc('(1+2)*(3/2)')), float(4.5))
 
     def test_calc_eight(self):
-        self.assertEqual(float(to_calc('64^0.5')), float(64**(0.5)))
+        self.assertEqual(float(to_calc('64^0.5')), float(8))

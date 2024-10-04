@@ -65,4 +65,5 @@ def to_calc(calc_example_str):
         operation = op_stack.pop()
         num_stack.append(str(do_oper(first_arg, second_arg, operation)))
 
+
     return num_stack[0]

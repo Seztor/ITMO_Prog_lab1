@@ -13,6 +13,7 @@ def encrypt_caesar(plaintext: str, shift: int = 3) -> str:
     ciphertext = ""
     offset_ascii_upper = 65
     offset_ascii_lower = 97
+
     for i in plaintext:
         if i.isalpha():
             if i.islower():

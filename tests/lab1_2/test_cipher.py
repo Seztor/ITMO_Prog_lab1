@@ -1,5 +1,6 @@
 import unittest
 from src.lab1_2.caesar import encrypt_caesar,decrypt_caesar
+from src.lab1_2.rsa import is_prime, gcd, multiplicative_inverse
 from src.lab1_2.vigenre import encrypt_vigenere, decrypt_vigenere
 
 
@@ -19,7 +20,7 @@ class CalculatorTestCase(unittest.TestCase):
         self.assertEqual(decrypt_caesar(''), '')
 
 
-    def tests_rsa(self):
+    def tests_vigenre(self):
         self.assertEqual(encrypt_vigenere("PYTHON", "A"), 'PYTHON')
         self.assertEqual(encrypt_vigenere("python", "a"), 'python')
         self.assertEqual(encrypt_vigenere("ATTACKATDAWN", "LEMON"), 'LXFOPVEFRNHR')
@@ -30,3 +31,17 @@ class CalculatorTestCase(unittest.TestCase):
         self.assertEqual(decrypt_vigenere("LXFOPVEFRNHR", "LEMON"), 'ATTACKATDAWN')
         self.assertEqual(decrypt_vigenere("LOOKATME", "PLEASE"), 'WDKKIPXT')
 
+
+    def tests_rsa(self):
+        self.assertEqual(is_prime(2), True)
+        self.assertEqual(is_prime(15), False)
+        self.assertEqual(is_prime(179), True)
+
+        self.assertEqual(gcd(12, 15), 3)
+        self.assertEqual(gcd(3, 7), 1)
+        self.assertEqual(gcd(43442352423424, 414451344153542), 2)
+
+        self.assertEqual(multiplicative_inverse(7, 40), 23)
+        self.assertEqual(multiplicative_inverse(2143, 66435), 33202)
+        self.assertEqual(multiplicative_inverse(25, 72), 49)
+        self.assertEqual(multiplicative_inverse(254353464135341,365746736253443254252), 39384089349541956393)

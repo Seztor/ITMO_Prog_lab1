@@ -4,7 +4,7 @@ from src.lab1_2.rsa import is_prime, gcd, multiplicative_inverse
 from src.lab1_2.vigenre import encrypt_vigenere, decrypt_vigenere
 
 
-class CalculatorTestCase(unittest.TestCase):
+class CipherTestCase(unittest.TestCase):
 
     def tests_caesar(self):
         self.assertEqual(encrypt_caesar('PYTHON'), 'SBWKRQ')

@@ -16,11 +16,12 @@ def encrypt_vigenere(plaintext: str, keyword: str) -> str:
             else:
                 ciphertext += chr((ord(i) - offset_ascii_upper + shift)
                                   % 26 + offset_ascii_upper)
+            keyword_ind_current += 1
+            if keyword_ind_current == len(keyword):
+                keyword_ind_current = 0
         else:
             ciphertext += i
-        keyword_ind_current += 1
-        if keyword_ind_current == len(keyword):
-            keyword_ind_current = 0
+
     return ciphertext
 
 
@@ -40,9 +41,10 @@ def decrypt_vigenere(ciphertext: str, keyword: str) -> str:
             else:
                 plaintext += chr((ord(i) - offset_ascii_upper - shift)
                                  % 26 + offset_ascii_upper)
+            keyword_ind_current += 1
+            if keyword_ind_current == len(keyword):
+                keyword_ind_current = 0
         else:
             plaintext += i
-        keyword_ind_current += 1
-        if keyword_ind_current == len(keyword):
-            keyword_ind_current = 0
+
     return plaintext
